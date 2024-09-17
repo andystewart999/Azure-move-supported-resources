@@ -1,4 +1,4 @@
-Resource type,Resource group,Subscription
+Resource,Move Resource Group,Move Subscription
 Microsoft.AAD/domainservices,0,0
 Microsoft.Addons/supportproviders,0,0
 Microsoft.ADHybridHealthService/aadsupportcases,0,0
