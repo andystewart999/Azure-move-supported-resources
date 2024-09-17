@@ -24,9 +24,9 @@ url = 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/management
 file_name = 'azure_resource_migration_list.csv'
 csv_file = open(file_name, 'w')
 if (include_region_move == True):
-    csv_file.writelines("Resource type,Resource group,Subscription,Region move\n")
+    csv_file.writelines("Resource,Move Resource Group,Move Subscription,Move Region\n")
 else:
-    csv_file.writelines("Resource type,Resource group,Subscription\n")
+    csv_file.writelines("Resource,Move Resource Group,Move Subscription\n")
 csv_file.close()
 
 # Send a GET request to the web page
