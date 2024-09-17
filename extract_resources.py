@@ -12,6 +12,7 @@ strict_replacement = 'Review'
 numeric_mode = True
 
 # If you want to include regions as well as resource groups and subscriptions, set this to True
+# Strictly you might also want to set strict_replacement to '0' as a worst-case scenario, up to you
 include_region_move = False
 
 # URL of the web page
