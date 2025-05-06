@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+import os
 
 ### Variables ###
 # Strict mode forces all results to be either Yes/1 or No/0
@@ -21,8 +22,10 @@ url = 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/management
 ### Let's get started! ###
 
 # Write the header
-file_name = 'azure_resource_migration_list.csv'
+rootdir = os.getcwd()
+file_name = rootdir + '/azure_resource_migration_list_test.csv'
 csv_file = open(file_name, 'w')
+
 if (include_region_move == True):
     csv_file.writelines("Resource,Move Resource Group,Move Subscription,Move Region\n")
 else:
@@ -70,4 +73,5 @@ for i, header in enumerate(ah):
         # Save the DataFrame to a CSV file
         df.to_csv(file_name, index=False, header=False, mode='a')
 
+csv_file.close()
 print("Tables have been saved to " + file_name)
