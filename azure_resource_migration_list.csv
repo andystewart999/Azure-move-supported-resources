@@ -674,8 +674,8 @@ Microsoft.Sql/servers/elasticpools,1,1
 Microsoft.Sql/servers/jobaccounts,1,1
 Microsoft.Sql/servers/jobagents,1,1
 Microsoft.Sql/virtualclusters,0,0
-Microsoft.SqlVirtualMachine/sqlvirtualmachinegroups,1,1
-Microsoft.SqlVirtualMachine/sqlvirtualmachines,1,1
+Microsoft.SqlVirtualMachine/sqlvirtualmachinegroups,0,0
+Microsoft.SqlVirtualMachine/sqlvirtualmachines,0,0
 Microsoft.Storage/storageaccounts,1,1
 Microsoft.StorageCache/caches,0,0
 Microsoft.StorageSync/storagesyncservices,1,1
