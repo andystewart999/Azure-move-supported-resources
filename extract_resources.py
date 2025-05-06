@@ -23,7 +23,7 @@ url = 'https://learn.microsoft.com/en-us/azure/azure-resource-manager/management
 
 # Write the header
 rootdir = os.getcwd()
-file_name = rootdir + '/azure_resource_migration_list_test.csv'
+file_name = rootdir + '/azure_resource_migration_list.csv'
 csv_file = open(file_name, 'w')
 
 if (include_region_move == True):
