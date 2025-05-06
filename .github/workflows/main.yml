@@ -15,6 +15,9 @@ on:
         - warning
         - debug
 
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
