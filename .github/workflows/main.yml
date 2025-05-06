@@ -41,7 +41,14 @@ jobs:
       - name: execute py script # run file
         run: |
           python extract_resources.py
-      - name: commit new file
+
+      - name: Check for modified files
+        id: git-check
+        run: |
+          echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: Update changes in GitHub repository
+        if: steps.git-check.outputs.modified == 'true'
         run: |
           git config --global user.name 'Andy Stewart'
           git config --global user.email 'andy.stewart@live.com'
