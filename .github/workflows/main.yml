@@ -37,3 +37,10 @@ jobs:
       - name: execute py script # run file
         run: |
           python extract_resources.py
+      - name: commit new file
+        run: |
+          git config --global user.name 'Andy Stewart'
+          git config --global user.email 'andy.stewart@live.com'
+          git commit -am "Automated commit"
+          git push
+      
