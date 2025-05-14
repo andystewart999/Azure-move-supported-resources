@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 import os
 
 ### Variables ###
-# Strict mode forces all results to be either Yes/1 or No/0
-# Anything else is converted
+# Strict mode forces all results to be either Yes/1 or No/0, if the result can't be distilled down to that then 'strict_replacement' is used instead
+# There are a few tables where there are additional caveats, for example the snapshot type impacts its ability to be migrated, but it's out of scope for this CSV to make that call hence the default 'Review' tag
 strict_mode = True
 strict_replacement = 'Review'
 
@@ -13,7 +13,8 @@ strict_replacement = 'Review'
 numeric_mode = True
 
 # If you want to include regions as well as resource groups and subscriptions, set this to True
-# Strictly you might also want to set strict_replacement to '0' as a worst-case scenario, up to you
+# You might also want to set strict_replacement to '0' as a worst-case scenario, up to you
+# The script assumes that a 'pending' status means 'no'
 include_region_move = False
 
 # URL of the web page
@@ -55,9 +56,12 @@ for i, header in enumerate(ah):
 
         if (strict_mode == True):
             #Force either Yes or No, otherwise replace with the strict replacement
-            df.loc[~df["Resource group"].isin(["Yes","No"]), "Resource group"] = strict_replacement
-            df.loc[~df["Subscription"].isin(["Yes","No"]), "Subscription"] = strict_replacement
-            df.loc[~df["Region move"].isin(["Yes","No"]), "Region move"] = strict_replacement
+            df.loc[~df["Resource group"].isin(["Yes","No", "pending"]), "Resource group"] = strict_replacement
+            df.loc[~df["Subscription"].isin(["Yes","No","pending"]), "Subscription"] = strict_replacement
+            df.loc[~df["Region move"].isin(["Yes","No", "pending"]), "Region move"] = strict_replacement
+
+        # Replace 'pending' with 'no'
+        df[df.isin(["pending"])] = "no"
 
         if (numeric_mode == True):
             #Convert Yes and No to 1 and 0
@@ -67,7 +71,7 @@ for i, header in enumerate(ah):
         if (include_region_move == False):
             df.drop('Region move', axis=1, inplace = True)
 
-        # apply regular expression to remove white space from all strings in DataFrame
+        # Apply a regular expression to remove white space from all strings in the DataFrame
         df['Resource type'] = df['Resource type'].replace(r'\s+', '', regex=True)
 
         # Save the DataFrame to a CSV file
