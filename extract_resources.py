@@ -60,8 +60,8 @@ for i, header in enumerate(ah):
             df.loc[~df["Subscription"].isin(["Yes","No","pending"]), "Subscription"] = strict_replacement
             df.loc[~df["Region move"].isin(["Yes","No", "pending"]), "Region move"] = strict_replacement
 
-        # Replace 'pending' with 'no'
-        df[df.isin(["pending"])] = "no"
+        # Replace 'pending' with 'No'
+        df[df.isin(["pending"])] = "No"
 
         if (numeric_mode == True):
             #Convert Yes and No to 1 and 0
