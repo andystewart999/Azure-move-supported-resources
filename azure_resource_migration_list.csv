@@ -262,9 +262,9 @@ Microsoft.Devices/elasticpools/iothubtenants,0,0
 Microsoft.Devices/iothubs,1,1
 Microsoft.Devices/provisioningservices,1,1
 Microsoft.DevOps/pipelines,1,1
-Microsoft.DevOps/controllers,no,no
+Microsoft.DevOps/controllers,0,0
 Microsoft.DevSpaces/controllers,1,1
-Microsoft.DevSpaces/AKScluster,no,no
+Microsoft.DevSpaces/AKScluster,0,0
 Microsoft.DevTestLab/labcenters,0,0
 Microsoft.DevTestLab/labs,1,0
 Microsoft.DevTestLab/labs/environments,1,0
