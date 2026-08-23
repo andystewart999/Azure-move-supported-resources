@@ -91,7 +91,8 @@ Microsoft.Blueprint/blueprintassignments,0,0
 Microsoft.Blueprint/blueprints,0,0
 Microsoft.BotService/botservices,1,1
 Microsoft.Cache/redis,1,1
-Microsoft.Cache/redisenterprise,0,0
+Microsoft.Cache/redisenterprise(AzureCacheforRedisEnterprise),0,0
+Microsoft.Cache/redisenterprise(AzureManagedRedis),0,0
 Microsoft.Capacity/appliedreservations,0,0
 Microsoft.Capacity/calculateexchange,0,0
 Microsoft.Capacity/calculateprice,0,0
@@ -461,7 +462,7 @@ Microsoft.Network/expressroutecircuits,0,0
 Microsoft.Network/expressroutegateways,0,0
 Microsoft.Network/expressrouteserviceproviders,0,0
 Microsoft.Network/firewallpolicies,0,0
-Microsoft.Network/frontdoors,0,0
+"Microsoft.Network/frontdoors(ThisrowisforFrontDoorClassictieronly.ForFrontDoorStandard/Premium,refertoMicrosoft.Cdn/profiles)",0,0
 Microsoft.Network/ipallocations,1,1
 Microsoft.Network/ipgroups,0,0
 Microsoft.Network/loadbalancers,Review,Review
@@ -675,7 +676,7 @@ Microsoft.Sql/servers/jobaccounts,1,1
 Microsoft.Sql/servers/jobagents,1,1
 Microsoft.Sql/virtualclusters,0,0
 Microsoft.SqlVirtualMachine/sqlvirtualmachinegroups,0,0
-Microsoft.SqlVirtualMachine/sqlvirtualmachines,0,0
+Microsoft.SqlVirtualMachine/sqlvirtualmachines,1,1
 Microsoft.Storage/storageaccounts,1,1
 Microsoft.StorageCache/caches,0,0
 Microsoft.StorageSync/storagesyncservices,1,1
